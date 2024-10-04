@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI BLOG PERSONAL AVANCE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            font-size: 3em;
+        }
+        h2 {
+            color: #333;
+            font-size: 2em;
+            margin-top: 40px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MI BLOG PERSONAL AVANCE</h1>
+
+    <!-- Sección de gustos personales -->
+    <div class="section">
+        <h2>Mis Gustos</h2>
+
+        <h3>1. Mi comida favorita es boneless</h3>
+        <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb34" alt="Boneless">
+
+        <h3>2. Mi bebida favorita es la piña colada</h3>
+        <img src="https://images.unsplash.com/photo-1585238342029-2a9b1a22569b" alt="Piña Colada">
+
+        <h3>3. Mi deporte favorito es la Fórmula 1</h3>
+        <img src="https://images.unsplash.com/photo-1628544057993-38b64d6ce580" alt="Fórmula 1">
+
+        <h3>4. Me gusta ir de antro, de preferencia a Havana</h3>
+        <img src="https://images.unsplash.com/photo-1597600156621-d8422d9793d4" alt="Antro Havana">
+
+        <h3>5. Me gusta mucho mi trabajo (mi taller automotriz)</h3>
+        <img src="https://images.unsplash.com/photo-1552637090-e6ad53d63106" alt="Taller Automotriz">
+    </div>
+
+    <!-- Sección de películas favoritas -->
+    <div class="section">
+        <h2>Mis Películas Favoritas</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Película</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Interstellar</td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg" alt="Interstellar"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bad Boys</td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Bad_Boys_poster.jpg" alt="Bad Boys"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Toda la saga de Maze Runner</td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/d/d6/MazeRunnerPoster.jpg" alt="Maze Runner"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>La saga de Mad Max</td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/6/6e/Mad_Max_Fury_Road.jpg" alt="Mad Max"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Iron Man</td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/7/70/Ironmanposter.JPG" alt="Iron Man"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>Página desarrollada por Guillermo De La Vega</p>
+    </footer>
+
+</body>
+</html>
