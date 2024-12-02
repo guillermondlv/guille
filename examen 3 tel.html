@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Telefónico</title>
+
+    <style>
+        body {
+            background-color: #13edb3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #calculoMinutos {
+            width: 280px;
+            background-color: #4ddb69;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 18px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+
+        input[type="number"], select, #resultado {
+            width: 100%;
+            padding: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="calculoMinutos" action="#" method="GET">
+        <h1>RECIBO TELEFÓNICO</h1>
+        
+        <label>Minutos de celular (10.00 MXN c/u)</label>
+        <input type="number" id="minCel" value="1">
+        
+        <hr>
+        
+        <label>TIPO DE PLAN</label>
+        <input type="radio" name="plan" value="500"> Solo teléfono (500 MXN)<br>
+        <input type="radio" name="plan" value="650"> Teléfono + Internet (650 MXN)<br>
+        <input type="radio" name="plan" value="800"> Teléfono + Internet + TV (800 MXN)<br>
+        <input type="radio" name="plan" value="950"> Teléfono + Internet (100 Mbps) + 2 TV (950 MXN)<br>
+
+        <hr>
+        
+        <label>OTROS SERVICIOS</label>
+        <input type="checkbox" name="otros" value="50"> Antivirus (50 MXN)<br>
+        <input type="checkbox" name="otros" value="70"> Servicio de Nube (70 MXN)<br>
+        <input type="checkbox" name="otros" value="90"> Web Services (90 MXN)<br>
+        <input type="checkbox" name="otros" value="110"> Firewall (110 MXN)<br>
+
+        <hr>
+        
+        <label>PAQUETES</label>
+        <select id="paquete">
+            <option value="100">Residencial (100 MXN)</option>
+            <option value="150">PYMES (150 MXN)</option>
+            <option value="200">Empresas (200 MXN)</option>
+            <option value="50">Universidades (50 MXN)</option>
+        </select>
+
+        <hr>
+
+        <div class="result">
+            <label>Total a pagar:</label>
+            <input type="text" id="resultado" readonly>
+        </div>
+
+        <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+
+    <script>
+        function calcular() {
+            var formulario = document.getElementById("calculoMinutos");
+            var minCel = parseInt(document.getElementById("minCel").value) || 0;
+            var total = minCel * 10; // Costo por minutos
+
+            // Calcular costo del plan seleccionado
+            var planSeleccionado = document.querySelector('input[name="plan"]:checked');
+            if (planSeleccionado) {
+                total += parseInt(planSeleccionado.value);
+            }
+
+            // Calcular costo de otros servicios seleccionados
+            var otrosServicios = formulario.querySelectorAll('input[name="otros"]:checked');
+            otrosServicios.forEach(function(servicio) {
+                total += parseInt(servicio.value);
+            });
+
+            // Calcular costo del paquete seleccionado
+            var paqueteSeleccionado = parseInt(document.getElementById("paquete").value) || 0;
+            total += paqueteSeleccionado;
+
+            // Mostrar el resultado total
+            document.getElementById("resultado").value = total + " MXN";
+        }
+    </script>
+</body>
+
+</html>
